@@ -1,0 +1,101 @@
+
+/*----- 泡泡 -----*/
+.p-loading-bubble{
+	width:50px;
+	height:50px;
+	margin-left:auto;
+	margin-right:auto;
+	position:relative;
+}
+.p-loading-bubble:before,
+.p-loading-bubble:after,
+.p-loading-bubble i:before,
+.p-loading-bubble i:after{
+	position:absolute;
+	content:"";
+	width:0;
+	height:0;
+	border:1px solid #0097FB;
+	border-radius:50%;
+	left:25px;
+	top:25px;
+	opacity:0;
+	
+	-webkit-animation-duration: 2.5s;
+	-webkit-animation-timing-function: ease-out;
+	-webkit-animation-iteration-count: infinite;
+	-webkit-animation-direction: normal;
+	-webkit-animation-play-state: running;
+	
+	animation-duration: 2.5s;
+	animation-timing-function: ease-out;
+	animation-iteration-count: infinite;
+	animation-direction: normal;
+	animation-play-state: running;
+}
+
+.p-loading-bubble:before{
+	-webkit-animation-name: p-loading-bubble-action-1;
+	-webkit-animation-delay: 0;
+	
+	animation-name: p-loading-bubble-action-1;
+	animation-delay: 0;
+}
+
+.p-loading-bubble:after{
+	-webkit-animation-name: p-loading-bubble-action-1;
+	-webkit-animation-delay: 0.2s;
+	
+	animation-name: p-loading-bubble-action-1;
+	animation-delay: 0.2s;
+}
+
+.p-loading-bubble i:before{
+	-webkit-animation-name: p-loading-bubble-action-1;
+	-webkit-animation-delay: 0.5s;
+	
+	animation-name: p-loading-bubble-action-1;
+	animation-delay: 0.5s;
+}
+
+.p-loading-bubble i:after{
+	-webkit-animation-name: p-loading-bubble-action-1;
+	-webkit-animation-delay: 0.9s;
+	
+	animation-name: p-loading-bubble-action-1;
+	animation-delay: 0.9s;
+}
+
+
+@-webkit-keyframes p-loading-bubble-action-1{
+	0% {
+		width:0;
+		height:0;
+		left:25px;
+		top:25px;
+		opacity:1;
+	}
+	100% {
+		width:50px;
+		height:50px;
+		left:0px;
+		top:0px;
+		opacity:0;
+	}
+}
+@keyframes p-loading-bubble-action-1{
+	0% {
+		width:0;
+		height:0;
+		left:25px;
+		top:25px;
+		opacity:1;
+	}
+	100% {
+		width:50px;
+		height:50px;
+		left:0px;
+		top:0px;
+		opacity:0;
+	}
+}
