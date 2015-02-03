@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>非高级浏览器兼容测试</title>
+  <meta name="viewport" content="initial-scale=1,maximum-scale=1,user-scalable=no,width=device-width" />
+  
+  <style>
+  
+    html{background-color:#333; font-family:verdana;}
+    body{ overflow-x:hidden; }
+    a{ color:#666; font-size:12px; }
+    .footer{ text-align:center; padding:50px 0 20px; clear:both; }
+    
+    h1, h2{
+      color:#B39D7C;
+      text-align:center;
+    }
+    
+    h1{
+      font-size:18px;
+      color:#ccc;
+      margin:30px 0 50px;
+    }
+    h2{
+      font-size:14px;
+      margin-bottom:30px;
+    }
+    
+    .block{
+      width:300px;
+      margin:0 auto;
+    }
+    
+    
+    .content{
+      width:600px;
+      margin:0 auto;
+      overflow:hidden;
+    }
+    
+    @media (max-width:600px){
+      .content{
+        width:300px;
+      }
+    }
+    
+    .bubble-in{
+      width:50px;
+      height:50px;
+      overflow:hidden;
+      position:relative;
+      margin:0 auto;
+    }
+    .bubble-in img{
+      position:absolute;
+      left:0;
+      top:0;
+    }
+  </style>
+  
+  <script>
+    function pngtogif(img, block_width){
+      
+      var img_width = img.width;
+      
+      var block_height = img.height;
+      var block_width = block_width || block_height;
+      
+      var left = 0;
+      var max = parseInt(img_width / block_width, 10);
+      var maxLeft = (max - 1) * block_width * -1;
+
+      setInterval(function(){
+        left = left - block_width;
+
+        if(left < maxLeft){
+          left = 0;
+        }
+        
+        img.style.left = left + 'px';
+      },100);
+    }
+  </script>
+</head>
+<body>
+
+  <h1>Paper Loading</h1>
+  
+  <div class="block block-bubble">
+    <h2>Bubble</h2>
+    
+    <div class="bubble">
+      <div class="bubble-in">
+        <img src="bubble.png" alt="bubble" onload="pngtogif(this, 50);" />
+      </div>
+    </div>
+    
+  </div>
+  
+</body>
+</html>
