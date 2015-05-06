@@ -57,6 +57,32 @@
       left:0;
       top:0;
     }
+    
+    .bubble-img{
+      width : 50px;
+      height : 50px;
+      display : block;
+      background-image : url(./images-by-tinypng-paper/bubble.png);
+      -webkit-animation : rotate 2s steps(20) infinite;
+      animation : rotate 2s steps(20) infinite
+    }
+    @-webkit-keyframes rotate {
+      from {
+        background-position : 0 0
+      }
+      to {
+        background-position : -1000px 0
+      }
+    }
+    @keyframes rotate {
+      from {
+        background-position : 0 0
+      }
+      to {
+        background-position : -1000px 0
+      }
+    }
+    
   </style>
   
   <script>
@@ -89,11 +115,20 @@
   
   <div class="content">
     <div class="block block-bubble">
-      <h2>Bubble</h2>
+      <h2>Bubble JS</h2>
       
+      <!-- js 实现方式 -->
       <div class="bubble">
         <div class="bubble-in">
           <img src="./images-by-tinypng-paper/bubble.png" alt="bubble" onload="pngtogif(this, 50);" />
+        </div>
+      </div>
+      
+      <h2 style="margin-top:50px;">Bubble CSS</h2>
+      <!-- css 实现方式 -->
+      <div class="bubble">
+        <div class="bubble-in">
+          <div class="bubble-img"></div>
         </div>
       </div>
       
